@@ -148,11 +148,12 @@ class EasyFileStorageSDK
             // 查看原图，将附件路径替换成原图路径
             $oriFileName = str_replace('.', '_ori.', $fileName);
             $url = str_replace($fileName, $oriFileName, $url);
+            $fileName = $oriFileName;
         }
         // 生成签名
         $sign = (new self())->makeSign($fileName, $params, $config['app_secret']);
         $url = $config['api_url'].'/f/'.$config['bucket_name']. $url .'?sign='. $sign;
-        if (empty($data)) {
+        if (empty($params)) {
             return $url;
         }
         $url .= '&'. http_build_query($params);

@@ -9,6 +9,8 @@
 composer require yjyer/efs-php-sdk
 # 更新扩展
 composer update yjyer/efs-php-sdk
+# 移除扩展
+composer remove yjyer/efs-php-sdk
 ```
 
 ## 使用方式
