@@ -152,7 +152,7 @@ class EasyFileStorageSDK
         }
         // 生成签名
         $sign = (new self())->makeSign($fileName, $params, $config['app_secret']);
-        $url = $config['api_url'].'/f/'.$config['bucket_name']. $url .'?sign='. $sign;
+        $url = $config['api_url'].'/'.$config['bucket_name']. $url .'?sign='. $sign;
         if (empty($params)) {
             return $url;
         }
